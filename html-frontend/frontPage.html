@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<script src = "background.js"></script>
+
 
 <head>
     <link rel="stylesheet" href = "everything.css">
@@ -16,9 +18,11 @@
   
   
         <div class = 'image-button-container'>
-            <img class = 'doughnut-img' src = "reward-doughnut.png" alt = "saucy doughnut420690" width = "100" height = "100">
-            <button class = 'add-button'>+</button>
-            <button class = 'minus-button'>-</button>
+            <img class = 'doughnut-img' src = "reward-doughnut.png"
+             alt = "saucy doughnut420690" width = "100%" height = "100%">
+            <button class = 'add-button' onclick = "changeOrder(0,1,'label1')">+</button>
+            <div id = "label1">0</div>
+            <button class = 'minus-button'onclick = "changeOrder(0,-1,'label1')">-</button>
         </div>
         <button>2</button>
         <button>3</button>

@@ -1,19 +1,25 @@
+.body{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 70% 20%;
+}
+
 .big-button-container{
     border:5px solid #861c1c;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     grid-template-rows: repeat(3, auto);
-    position: relative;
+    
 }
 
 .image-button-container{
     display: grid;
-    grid-template-columns: auto;
-    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto;
 }
 .doughnut-img{
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
 }
 
 
