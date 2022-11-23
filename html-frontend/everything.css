@@ -1,0 +1,12 @@
+.button-container{
+    border:5px solid #861c1c;
+    display: grid;
+    grid-template-columns: 100px 100px;
+    background-image: url('reward-doughnut.png');
+}
+.base{
+    border:5px solid #0e49a1;
+}
+.header{
+    border: 5px solid #1dad10
+}
