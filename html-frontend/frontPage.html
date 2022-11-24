@@ -21,7 +21,7 @@
             <img class = 'doughnut-img' src = "reward-doughnut.png"
              alt = "saucy doughnut420690" width = "100%" height = "100%">
             <button class = 'add-button' onclick = "changeOrder(0,1,'label1')">+</button>
-            <div id = "label1"><center>0</center></div>
+            <div class = "nut-ammount-label" id = "label1">0</div>
             <button class = 'minus-button'onclick = "changeOrder(0,-1,'label1')">-</button>
         </div>
 
@@ -29,7 +29,7 @@
             <img class = 'doughnut-img' src = "reward-doughnut.png"
              alt = "saucy doughnut420690" width = "100%" height = "100%">
             <button class = 'add-button' onclick = "changeOrder(1,1,'label2')">+</button>
-            <div id = "label2"><center>0</center></div>
+            <div class = "nut-ammount-label" id = "label2">0</div>
             <button class = 'minus-button'onclick = "changeOrder(1,-1,'label2')">-</button>
         </div>
 
@@ -37,7 +37,7 @@
             <img class = 'doughnut-img' src = "reward-doughnut.png"
              alt = "saucy doughnut420690" width = "100%" height = "100%">
             <button class = 'add-button' onclick = "changeOrder(2,1,'label3')">+</button>
-            <div id = "label3"><center>0</center></div>
+            <div class = "nut-ammount-label" id = "label3">0</div>
             <button class = 'minus-button'onclick = "changeOrder(2,-1,'label3')">-</button>
         </div>
 
@@ -45,7 +45,7 @@
             <img class = 'doughnut-img' src = "reward-doughnut.png"
              alt = "saucy doughnut420690" width = "100%" height = "100%">
             <button class = 'add-button' onclick = "changeOrder(3,1,'label4')">+</button>
-            <div id = "label4"><center>0</center></div>
+            <div class = "nut-ammount-label" id = "label4">0</div>
             <button class = 'minus-button'onclick = "changeOrder(3,-1,'label4')">-</button>
         </div>
 
@@ -53,7 +53,7 @@
             <img class = 'doughnut-img' src = "reward-doughnut.png"
              alt = "saucy doughnut420690" width = "100%" height = "100%">
             <button class = 'add-button' onclick = "changeOrder(4,1,'label5')">+</button>
-            <div id = "label5"><center>0</center></div>
+            <div class = "nut-ammount-label" id = "label5">0</div>
             <button class = 'minus-button'onclick = "changeOrder(4,-1,'label5')">-</button>
         </div>
 
@@ -61,15 +61,16 @@
             <img class = 'doughnut-img' src = "reward-doughnut.png"
              alt = "saucy doughnut420690" width = "100%" height = "100%">
             <button class = 'add-button' onclick = "changeOrder(5,1,'label6')">+</button>
-            <div id = "label6"><center>0</center></div>
+            <div class = "nut-ammount-label" id = "label6">0</div>
             <button class = 'minus-button'onclick = "changeOrder(5,-1,'label6')">-</button>
         </div>
 
     </div>
 
     <div class = "base">
-        <label>order/checkout area</label>
-
+        <div id = "order-preview">order consists of:</div>
+        <div id = "order-total">total: $0</div>
+        <button>proceed to checkout</button>
     </div>
 
 

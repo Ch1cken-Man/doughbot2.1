@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-column-gap: 5%;       
-    grid-template-rows: 50% 50%;
+    
 }
 
 .image-button-container{
@@ -18,14 +18,25 @@
     grid-template-columns: auto auto auto;
 }
 
+.nut-ammount-label{
+    text-align: center;
+}
+
 .doughnut-img{
     grid-column-start: 1;
     grid-column-end: 4;
 }
 
 .base{
-    border:2px solid #0e49a1;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    border: 2px solid #0e49a1;
 }
+#order-preview{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
 .header{
     border: 2px solid #1dad10
 }

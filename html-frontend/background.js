@@ -1,12 +1,34 @@
 var currentOrder = [0,0,0,0,0,0];
 
+var priceKey = [2.75,2.75,2.75,2.75,2.75,2.75]
 
-function readOrder(doughnutCode, labelid){
-    document.getElementById(labelid).textContent = currentOrder[doughnutCode];
+totalPrice = 0
+
+function changeLabel(text, labelid){
+    document.getElementById(labelid).textContent = text;
+}
+
+function calculateTotal(){
+    totalPrice = 0;
+    for(let i = 0; i <currentOrder.length; i++){
+        totalPrice += currentOrder[i]*priceKey[i];
+    }
+    if(totalPrice>=100){
+        alert("you have ordered $100+ dollars of doughnuts. proceed??");
+    }
+    changeLabel(("total: $"+totalPrice), 'order-total');
+
 }
 
 
 function changeOrder(doughnutCode, sign, labelid){
-    currentOrder[doughnutCode] += sign;
-    readOrder(doughnutCode, labelid);
+    var expectedOrder = currentOrder[doughnutCode] + sign;
+    if(expectedOrder>=0){
+        currentOrder[doughnutCode] += sign;
+    }
+    var theText = currentOrder[doughnutCode];
+    changeLabel(theText, labelid);
+    calculateTotal();
+
+
 }
