@@ -29,6 +29,10 @@ function changeOrder(doughnutCode, sign, labelid){
     var theText = currentOrder[doughnutCode];
     changeLabel(theText, labelid);
     calculateTotal();
-
-
 }
+
+
+function loadPayementPage(){
+    
+}
+
