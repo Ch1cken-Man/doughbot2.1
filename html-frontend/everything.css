@@ -5,11 +5,11 @@
 }
 
 .big-button-container{
-    border:5px solid #861c1c;
+    border:2px solid #861c1c;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(3, auto);
-    
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 5%;       
+    grid-template-rows: 50% 50%;
 }
 
 .image-button-container{
@@ -17,17 +17,15 @@
     grid-template-rows: auto auto;
     grid-template-columns: auto auto auto;
 }
+
 .doughnut-img{
     grid-column-start: 1;
     grid-column-end: 4;
 }
 
-
-
-
 .base{
-    border:5px solid #0e49a1;
+    border:2px solid #0e49a1;
 }
 .header{
-    border: 5px solid #1dad10
+    border: 2px solid #1dad10
 }
