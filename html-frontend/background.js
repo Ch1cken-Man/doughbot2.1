@@ -32,17 +32,8 @@ function changeOrder(doughnutCode, sign, labelid){
 }
 
 
-function loadPayementPage(){
-    
-    for(let i = 0; i<currentOrder.length;i++){
-        if(i>0){
-            const newNode = document.createElement("div");
-            const textNode = document.createTextNode(currentOrder[i]+"works");
-            newNode.appendChile(textNode);
+function loadPaymentPage(){
+alert("the thing");    
 
-            const container = document.getElementById("the-summary");
-            container.insertBefore(newNode, container.children[0]);
-        }
-    }
 }
 
