@@ -1,7 +1,10 @@
+
+
 var currentOrder = [0,0,0,0,0,0];
 
-var priceKey = [2.75,2.75,2.75,2.75,2.75,2.75]
 
+
+var priceKey = [2.75,2.75,2.75,2.75,2.75,2.75]
 totalPrice = 0
 
 function changeLabel(text, labelid){
@@ -32,8 +35,36 @@ function changeOrder(doughnutCode, sign, labelid){
 }
 
 
-function loadPaymentPage(){
-alert("the thing");    
 
+function exitToConfirmationPage(){
+    orderTransferring = JSON.stringify(currentOrder);
+    sessionStorage.setItem("orderToTransfer", orderTransferring);
+    
+    window.location.href='confirmationPage.html';
 }
 
+
+
+
+function loadPageWithOrders(){
+
+    currentUnparsedOrder = sessionStorage.getItem(orderToTransfer);
+    currentOrder = JSON.parse(currentUnparsedOrder);
+
+    alert("I was called today"+currentOrder);
+    /*
+    for(let i = 0; i<currentOrder.length; i++){
+        if(currentOrder[i]>0){
+            addElement("div", currentOrder[i]);
+        }
+    }
+*/
+}
+
+function addElement(tags, nodeText){
+    var tag = document.createElement(tags);
+    var text = document.createTextNode(nodeText);
+    tag.appendChild(text);
+    var element = document.getElementById("the-summary");
+    element.appendChild(tag);
+}

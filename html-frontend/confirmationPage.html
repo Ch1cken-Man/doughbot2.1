@@ -7,10 +7,12 @@
     <link rel="stylesheet" href = "everything.css">
 </head>
 
-    <div class = "main-layout">
+
+<body class = "main-layout"  onload = "loadPageWithOrders()">
+
 
         <div id = "the-summary">
-            <label>your order goes here:</label>
+            <label id = "order-identifier">your order goes here:</label>
         </div>
         
         <div id = "the-taxes">
@@ -25,14 +27,10 @@
         <div id = "payment methods"  onload = "loadPaymentPage()">
             <label>card offerings</label>
         </div>
+</body>
 
 
-
-
-    </div>
-
-
-
+<script>loadPageWithOrders();</script>
 
 
 </html>

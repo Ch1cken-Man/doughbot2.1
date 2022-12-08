@@ -59,14 +59,21 @@
 
 .main-layout{
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 80% 20%;
     grid-template-rows: 80% 20%;
     grid-template-areas: 
         "summary" "taxes"
         "payment" "payment";
 }
 
-
+#the-summary{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+}
+#order-identifier{
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
 
 
 
