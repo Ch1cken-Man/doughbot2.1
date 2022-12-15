@@ -47,7 +47,10 @@ function exitToConfirmationPage(){
 
 function loadConfirmationPage(){
     currentOrder = sessionStorage.getItem("carriedOrder");
-    addDoughnutToOrderConfirmation("div", currentOrder);
+    orderLength = currentOrder.length;
+    for (var i = 0; i<orderLength; i++){
+        alert("works");    
+    }
 }
 
 function loadPaymentPage(){
