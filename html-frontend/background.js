@@ -37,31 +37,27 @@ function changeOrder(doughnutCode, sign, labelid){
 
 
 function exitToConfirmationPage(){
-    orderTransferring = JSON.stringify(currentOrder);
-    sessionStorage.setItem("orderToTransfer", orderTransferring);
-    
+    sessionStorage.setItem("carriedOrder",currentOrder);
     window.location.href='confirmationPage.html';
+    
 }
 
 
 
 
-function loadPageWithOrders(){
-
-    currentUnparsedOrder = sessionStorage.getItem(orderToTransfer);
-    currentOrder = JSON.parse(currentUnparsedOrder);
-
-    alert("I was called today"+currentOrder);
-    /*
-    for(let i = 0; i<currentOrder.length; i++){
-        if(currentOrder[i]>0){
-            addElement("div", currentOrder[i]);
-        }
-    }
-*/
+function loadConfirmationPage(){
+    currentOrder = sessionStorage.getItem("carriedOrder");
+    addDoughnutToOrderConfirmation("div", currentOrder);
 }
 
-function addElement(tags, nodeText){
+function loadPaymentPage(){
+    alert("next page loaded.");
+}
+
+
+
+
+function addDoughnutToOrderConfirmation(tags, nodeText){
     var tag = document.createElement(tags);
     var text = document.createTextNode(nodeText);
     tag.appendChild(text);
