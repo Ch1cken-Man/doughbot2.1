@@ -7,6 +7,13 @@ var currentOrder = [0,0,0,0,0,0];
 var priceKey = [2.75,2.75,2.75,2.75,2.75,2.75]
 totalPrice = 0
 
+//decimal percent form, eg sales tax is 6.5%
+salesTax = .065;
+otherTax = .10;
+
+
+
+
 //changes a label's text
 function changeLabel(text, labelid){
     document.getElementById(labelid).textContent = text;
@@ -19,9 +26,9 @@ function calculateTotal(){
     for(let i = 0; i <currentOrder.length; i++){
         totalPrice += currentOrder[i]*priceKey[i];
     }
-    if(totalPrice>=100){
-        alert("you have ordered $100+ dollars of doughnuts. proceed??");
-    }
+    //if(totalPrice>=100){
+    //    alert("you have ordered $100+ dollars of doughnuts. proceed??");
+    //}
     changeLabel(("total: $"+totalPrice), 'order-total');
 }
 
@@ -45,6 +52,32 @@ function exitToConfirmationPage(){
     
 }
 
+function loadConfirmationPageTaxesAndTotal(){
+    
+    totalPrice = 0;
+    for(let i = 0; i <currentOrder.length; i++){
+        totalPrice += currentOrder[i]*priceKey[i];
+    }
+    
+    var otherOrderTaxes = totalPrice*otherTax;
+    var orderSalesTax = totalPrice*salesTax;
+
+    var totalTax = otherOrderTaxes+orderSalesTax;
+
+
+
+    totalPrice += totalTax;
+
+
+    changeLabel('other taxes: '+'$'+otherOrderTaxes, "other-tax");
+    changeLabel('sales tax: '+'$'+orderSalesTax,'sales-tax');
+    changeLabel('total tax: '+'$'+totalTax,'total-tax');
+    changeLabel('total price: '+'$'+totalPrice,'total-cost');
+
+
+
+}
+
 
 
 //gets currentOrder from the previous page
@@ -54,12 +87,19 @@ function loadConfirmationPage(){
     currentOrder = JSON.parse(unparsedOrder);
 
     orderLength = currentOrder.length;
+
     for (var i = 0; i<orderLength; i++){
         if(currentOrder[i]>0){
             addDoughnutToOrderConfirmation(i);
         }
     }
+
+    loadConfirmationPageTaxesAndTotal();
 }
+
+
+
+
 
 function exitToPaymentPage(){
     alert("exiting to payment page");
