@@ -56,7 +56,7 @@ function loadConfirmationPage(){
     orderLength = currentOrder.length;
     for (var i = 0; i<orderLength; i++){
         if(currentOrder[i]>0){
-            addDoughnutToOrderConfirmation("div", currentOrder[i]);
+            addDoughnutToOrderConfirmation(i);
         }
     }
 }
@@ -72,10 +72,35 @@ function loadPaymentPage(){
 
 
 
-function addDoughnutToOrderConfirmation(tags, nodeText){
-    var tag = document.createElement(tags);
-    var text = document.createTextNode(nodeText);
-    tag.appendChild(text);
-    var element = document.getElementById("the-summary");
-    element.appendChild(tag);
+function addDoughnutToOrderConfirmation(doughnutID){
+
+    //the container everything goes in
+    var oneDoughnutOrderContainer = document.createElement('div');
+    oneDoughnutOrderContainer.className = 'single-dough-container';    
+
+
+    //image
+    var image = document.createElement('img');
+    image.src = "reward-doughnut.png";
+    image.style.width = '100%';
+    image.style.height = '100%';
+    
+    
+    //text-how many of the specific doughnut
+    var numberDoughnutIndicator = document.createElement('div');
+    numberDoughnutIndicator.id = "num-order-indicator";
+    var numText = document.createTextNode('x'+currentOrder[doughnutID]);
+    numberDoughnutIndicator.appendChild(numText);
+
+
+    //adds elements to microcontaine
+    
+    oneDoughnutOrderContainer.appendChild(image);
+    oneDoughnutOrderContainer.appendChild(numberDoughnutIndicator);
+    
+    
+    //appends microcontainer to the main container
+    var wholeContainer = document.getElementById('the-summary');
+    wholeContainer.appendChild(oneDoughnutOrderContainer);
+    
 }
