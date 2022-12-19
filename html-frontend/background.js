@@ -1,7 +1,7 @@
 
 
 var currentOrder = [0,0,0,0,0,0];
-
+var doughnutImages = ["doughnut-images/D1.png","doughnut-images/D2.png","doughnut-images/D3.png","doughnut-images/D4.png","doughnut-images/D5.png","doughnut-images/D6.png",]
 
 
 var priceKey = [2.75,2.75,2.75,2.75,2.75,2.75]
@@ -18,6 +18,12 @@ otherTax = .10;
 function changeLabel(text, labelid){
     document.getElementById(labelid).textContent = text;
 }
+
+function loadFrontPage(){
+
+}
+
+
 
 //frontpage.html used-
 //calculates order total and updates label at bottom
@@ -59,6 +65,7 @@ function loadConfirmationPageTaxesAndTotal(){
         totalPrice += currentOrder[i]*priceKey[i];
     }
     
+    var costBeforeTax = totalPrice;
     var otherOrderTaxes = totalPrice*otherTax;
     var orderSalesTax = totalPrice*salesTax;
 
@@ -68,11 +75,11 @@ function loadConfirmationPageTaxesAndTotal(){
 
     totalPrice += totalTax;
 
-
+    changeLabel('inital cost: '+'$'+costBeforeTax, 'inital-cost')
     changeLabel('other taxes: '+'$'+otherOrderTaxes, "other-tax");
     changeLabel('sales tax: '+'$'+orderSalesTax,'sales-tax');
     changeLabel('total tax: '+'$'+totalTax,'total-tax');
-    changeLabel('total price: '+'$'+totalPrice,'total-cost');
+    changeLabel('final price: '+'$'+totalPrice,'total-cost');
 
 
 
@@ -121,7 +128,7 @@ function addDoughnutToOrderConfirmation(doughnutID){
 
     //image
     var image = document.createElement('img');
-    image.src = "reward-doughnut.png";
+    image.src = doughnutImages[doughnutID];
     image.style.width = '100%';
     image.style.height = '100%';
     
