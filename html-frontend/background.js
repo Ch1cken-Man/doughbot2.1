@@ -19,10 +19,9 @@ function changeLabel(text, labelid){
     document.getElementById(labelid).textContent = text;
 }
 
-function loadFrontPage(){
-
+function roundMoney(number){
+return (Math.round(number*100))/100;
 }
-
 
 
 //frontpage.html used-
@@ -65,15 +64,15 @@ function loadConfirmationPageTaxesAndTotal(){
         totalPrice += currentOrder[i]*priceKey[i];
     }
     
-    var costBeforeTax = totalPrice;
-    var otherOrderTaxes = totalPrice*otherTax;
-    var orderSalesTax = totalPrice*salesTax;
+    var costBeforeTax = roundMoney(totalPrice);
+    var otherOrderTaxes = roundMoney(totalPrice*otherTax);
+    var orderSalesTax = roundMoney(totalPrice*salesTax);
 
-    var totalTax = otherOrderTaxes+orderSalesTax;
+    var totalTax = roundMoney(otherOrderTaxes+orderSalesTax);
 
 
 
-    totalPrice += totalTax;
+    totalPrice = roundMoney(totalPrice+totalTax);
 
     changeLabel('inital cost: '+'$'+costBeforeTax, 'inital-cost')
     changeLabel('other taxes: '+'$'+otherOrderTaxes, "other-tax");
