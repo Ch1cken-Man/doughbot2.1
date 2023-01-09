@@ -1,3 +1,20 @@
+/*
+p5.js seems like the port managemnet I will want to use to control the arduino. though I still have to figure
+out what I want it to do.
+
+
+arduino
+recieves: "coordoninates" one at a time
+sends: the "done" message ready for the next instruction. ques instructions if unavailable while recieved.
+
+raspberry Pi
+recieves: done message/error messages
+sends: coordinates in accordance with the stock and the requested order.
+
+
+
+
+
 //blink test script
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 var LED = new Gpio(4, 'out'); //use GPIO pin 4, and specify that it is output
