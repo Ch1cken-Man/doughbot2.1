@@ -13,7 +13,7 @@ sends: coordinates in accordance with the stock and the requested order.
 
 
 
-
+*/
 
 //blink test script
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
